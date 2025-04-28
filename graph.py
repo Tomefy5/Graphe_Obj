@@ -113,14 +113,22 @@ class Graph:
                 raise ValueError("L'arete doit etre un paire de noeuds")
 
             self.remove_edge(edge[0], edge[1])
-
+            
+    """
+    Affichage de la liste d'adjacence'
+    """
+    def display(self):
+        print("\n")
+        for vertex, neighbors in self.graph.items():
+            print(f"{vertex}: {neighbors}")
+        
+        print("\n")
 
 # main project
 m_graph = Graph()
 m_graph.add_node('A')
 m_graph.add_nodes(['B', 'C', 'D', 'E', 'F'])
-print(m_graph.graph)
+
 m_graph.add_edges([['B', 'F'], ['A', 'E'], ['A', 'F']])
-print(m_graph.graph)
-m_graph.remove_edges([['B', 'F'], ['A', 'E']])
-print(m_graph.graph)
+
+m_graph.display()
